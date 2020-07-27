@@ -10,9 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_07_27_214638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "garages", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "address"
+    t.string "phone_number"
+    t.boolean "availability"
+    t.integer "price_per_hour"
+    t.string "dimensions"
+    t.integer "price_per_day"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_garages_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "start_at"
+    t.datetime "finish_at"
+    t.bigint "user_id", null: false
+    t.bigint "garage_id", null: false
+    t.integer "price"
+    t.boolean "reservation_status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["garage_id"], name: "index_reservations_on_garage_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "garages", "users"
+  add_foreign_key "reservations", "garages"
+  add_foreign_key "reservations", "users"
 end
