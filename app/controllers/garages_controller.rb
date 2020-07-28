@@ -14,6 +14,7 @@ class GaragesController < ApplicationController
 
   def create
     @garage = Garage.new(garage_params)
+    # @garage.user = current_user
     if @garage.save
       redirect_to garage_path(@garage)
     else
@@ -37,7 +38,7 @@ class GaragesController < ApplicationController
   private
 
   def garage_params
-    params.require(:garage).permit(%i(title description address availability phone_number dimensions price_per_day price_per_hour))
+    params.require(:garage).permit(%i(title description address availability phone_number dimensions price_per_day price_per_hour photo))
   end
 
   def set_garage
