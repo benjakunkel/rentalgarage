@@ -1,24 +1,25 @@
 <div class="container">
-<h1 class="text-center mt-3 mb-4">Garages destacados</h1>
+  <h1 class="text-center mt-3 mb-4">Garages destacados</h1>
   <div class="row">
-    <% @garages.each do |garage| %>
-      <div class="col-md-4 my-3">
-        <div class="card-img-top">
-        <% if garage.photo.attached? %>
-          <%= cl_image_tag garage.photo.key, height: 300, width: 300, crop: :fill, class: "img-fluid" %>
-        <% else %>
-          <%= cl_image_tag "nodisponible", height: 300, width: 300, crop: :fill, class: "img-fluid" %>
-        <% end %>
-          <h4><%= garage.title %></h4>
-          <small><%= garage.description %></small>
-          <p> $ <%= garage.price_per_hour %> / Hora</p>
-          <div class="card-footer text-center">
-            <%# ALQUILAR %>
-           <a class="btn btn-dark"href=#>Alquilar</a>
-            <%# VER MAS %>
-            <a class="btn btn-warning"href=#>Ver mas</a>
+      <% @garages.each do |garage| %>
+        <div class="col-md-4 my-3">
+          <div class="card-img-top">
+            <% if garage.photo.attached? %>
+              <%= cl_image_tag garage.photo.key, height: 300, width: 300, crop: :fill, class: "img-fluid" %>
+            <% else %>
+              <%= cl_image_tag "nodisponible", height: 300, width: 300, crop: :fill, class: "img-fluid" %>
+            <% end %>
+          </div>
+            <h4><%= garage.title %></h4>
+            <small><%= garage.description %></small>
+            <p> $ <%= garage.price_per_hour %> / Hora</p>
+            <div class="card-footer text-center">
+              <%# ALQUILAR %>
+              <a class="btn btn-dark"href=#>Alquilar</a>
+              <%# VER MAS %>
+              <a class="btn btn-warning"href=#>Ver mas</a>
           </div>
         </div>
-        <% end %>
-
+      <% end %>       
   </div>
+</div>
