@@ -1,21 +1,26 @@
-<h2>Log in</h2>
 <div class="container">
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+ <div class="log-card mt-4">
+    <h2 class="text-center">Iniciar Sesion</h2>
+    <div class="form">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
+                  label: "Ingresa tu mail:",
                   required: false,
                   autofocus: true,
                   input_html: { autocomplete: "email" } %>
       <%= f.input :password,
+                  label: "Ingresa tu contraseña:",
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <%= f.input :remember_me, label: "Recordar cuenta", as: :boolean if devise_mapping.rememberable? %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in", class:"btn btn-dark" %>
+      <%= f.button :submit, "Iniciar Sesion", class:"btn btn-outline-dark mb-2" %>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
+  </div>
+ <p class="text-center"> No tenes cuenta ?  <%= render "devise/shared/links" %> </p>
+</div>
 </div>
