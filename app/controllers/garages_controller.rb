@@ -28,12 +28,12 @@ class GaragesController < ApplicationController
 
   def update
     @garage.update(garage_params)
-    redirect_to :garage_path(@garage)
+    redirect_to garage_path(@garage)
   end
 
   def destroy
     @garage.delete
-    redirect_to :garage_path 
+    redirect_to garage_path 
   end
 
   private
