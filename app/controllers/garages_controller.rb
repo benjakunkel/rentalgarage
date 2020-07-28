@@ -6,6 +6,7 @@ class GaragesController < ApplicationController
   end
 
   def show
+    @reservations = Reservation.new
   end
 
   def new
@@ -31,7 +32,7 @@ class GaragesController < ApplicationController
   end
 
   def destroy
-    @garage.delete
+    @garage.destroy
     redirect_to :garage_path 
   end
 
