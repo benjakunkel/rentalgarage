@@ -1,13 +1,18 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <i class="fas fa-car"></i>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> 
 
-
+  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div id="barrita" class="search-form-control form-group d-flex m-3">
+    <input class="border border-dark  form-control string requirer" placeholder="Buscar garages por zona" type="text" name="" id="" />
+    <button name="button" type="submit" class="btn btn-flat"> <i class="fas fa-search"></i> </button>
+  </div></form>
+  
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -26,8 +31,9 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Iniciar Sesion", new_user_session_path, class: "btn btn-outline-dark mr-2" %>
+          <%= link_to "Registrate", new_user_session_path, class: "btn btn-outline-warning" %>
+
         </li>
       <% end %>
     </ul>
