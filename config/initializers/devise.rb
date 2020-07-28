@@ -17,7 +17,7 @@ Devise.setup do |config|
 
   # config.secret_key = '74f13be35ba32a37593c09f3b1c6f6f5c87a654d23cd3424fca559578ab935dfcb4322f8bf697759abf8cf1dc1b7129755780b494e63e3e257e046ea3e20d63f'
 
-  
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -129,11 +129,9 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-<<<<<<< HEAD
+
   # config.pepper = 'cea018e26c0c7018888f38cde1495493ec1d7809532986b0e602e7d9cbf2ed4a728d982fb62d2998af5842183b81f5fa4a4a7cca98e4771c619a6c13e20fcad5'
-=======
-  # config.pepper = 'a9cedbb8c8858b07fa8d7f8132b1eba00ec9a6c90e99a9b3502740becddc8e5ac80c3d5726e8d95a40f4ac74358bdd467319b09305226facc2c7c1edacda05ee'
->>>>>>> f1bf0fd7f1873c4db4721d45cf484f234402dc35
+
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
