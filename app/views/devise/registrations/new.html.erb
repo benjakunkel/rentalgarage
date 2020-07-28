@@ -20,12 +20,12 @@
                     label: "Ingresa tu contraseña nuevamente:",
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
-      </div>
-
-      <div class="form-actions">
         <%= f.button :submit, "Registrar", class: "btn btn-outline-dark mb-2" %>
       <% end %>
       </div>
+
+      
+      
       <div class="text-center">
         <p> Ya tenes cuenta? entra aca: <%= render "devise/shared/links" %></p>
       </div>
