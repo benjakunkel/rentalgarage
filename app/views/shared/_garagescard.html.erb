@@ -1,0 +1,26 @@
+<div class="container">
+<h1 class="text-center mt-3">Garages destacados</h1>
+  <div class="row">
+        <div class="col-md-4 my-3">
+          <div class="card-img-top">
+          <ul>
+            <% @garages.each do |garage| %>
+              <li>
+                <%= image_tag "https://q-cf.bstatic.com/images/hotel/max1024x768/192/192357871.jpg", class: "img-fluid" %>
+                <h4><%=garage.title  %></h4>
+                <p><%= garage.description %></p> 
+                <p> <%= garage.price_per_hour %></p>
+              </li> 
+             <% end %>
+          </ul>
+          </div>
+          <div class="card-footer text-center">
+            <%# ALQUILAR %>
+           <a class="btn btn-dark"href=#>Alquilar</a>
+            <%# VER MAS %>
+            <a class="btn btn-warning"href=#>Ver mas</a>
+          </div>
+        </div>
+    </div>
+
+  </div>

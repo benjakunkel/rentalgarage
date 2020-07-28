@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  align-items: center;
+  height: 55px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +10,18 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 30px;
+}
+
+#barrita{
+  width: 150%;
+  margin: 0;
+  height: 40px;
+}
+@media (max-width: 500px){
+  #barrita{
+    width: 90%;
+    margin: 0;
+    height: 40px;
+  }
 }
