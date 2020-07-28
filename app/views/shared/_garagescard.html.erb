@@ -6,7 +6,11 @@
           <ul>
             <% @garages.each do |garage| %>
               <li>
-                <%= image_tag "https://q-cf.bstatic.com/images/hotel/max1024x768/192/192357871.jpg", class: "img-fluid" %>
+               <% if garage.photo.attached? %>
+                <%= cl_image_tag garage.photo.key, class: "img-fluid" %>
+              <% else %>
+                <%= image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/1200px-Imagen_no_disponible.svg.png") %>
+              <% end %>
                 <h4><%=garage.title  %></h4>
                 <p><%= garage.description %></p> 
                 <p> <%= garage.price_per_hour %></p>
