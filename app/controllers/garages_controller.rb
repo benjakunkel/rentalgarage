@@ -31,7 +31,7 @@ class GaragesController < ApplicationController
   end
 
   def destroy
-    @garage.destroy
+    @garage.delete
     redirect_to :garage_path 
   end
 
