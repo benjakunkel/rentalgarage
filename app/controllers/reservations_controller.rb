@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
     @reservation.price = (@reservation.finish_at - @reservation.start_at)*@garage.price_per_day
     @reservation.reservation_status = true
     @reservation.save!
-    redirect_to reservation_path
+    redirect_to reservation_path(@reservation)
   end
   
   def edit

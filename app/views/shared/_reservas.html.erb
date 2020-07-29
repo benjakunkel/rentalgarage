@@ -1,0 +1,23 @@
+<div class="container">
+<h1 class="text-center">Tus reservas</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Mail</th>
+        <th>Desde</th>
+        <th>Hasta</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+  <tbody>
+    <tr>
+      <td><%= @reservation.user.email %></td>
+      <td> <%= @reservation.start_at %></td>
+      <td><%= @reservation.finish_at %></td>
+      <td><%= @reservation.price %></td>
+      <td class="btn btn-danger"> Cancelar</td>
+     
+    </tr>
+  </tbody>
+  </table>
+</div>
