@@ -1,0 +1,27 @@
+<h1>Tus reservas</h1>
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Desde</th>
+        <th>Hasta</th>
+        <th>Precio</th>
+        <th>Disponible</th>
+      </tr>
+    </thead>
+  <tbody>
+    <tr>
+    <% @reservations.each do |reservation| %>
+      <td><%= reservation.user_id %></td>
+      <td> <%= reservation.start_at %></td>
+      <td><%= reservation.finish_at %></td>
+      <td><%= reservation.price %></td>
+      <td><%= reservation.reservation_status %> </td>
+      <td> Confirmar</td>
+      <td> Rechazar</td>
+     <% end %>
+    </tr>
+  </tbody>
+  </table>
+</div>
