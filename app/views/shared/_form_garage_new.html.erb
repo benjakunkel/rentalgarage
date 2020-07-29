@@ -1,0 +1,12 @@
+<%= simple_form_for @garage do |f| %>
+  <%= f.input :title %>
+  <%= f.input :phone_number %>
+  <%= f.input :address %>
+  <%= f.input :availability %>
+  <%= f.input :dimensions %>
+  <%= f.input :price_per_hour %>
+  <%= f.input :price_per_day %>
+  <%= f.input :description %>
+  <%= f.submit class: "btn btn-success" %>
+  <%= link_to "CANCEL", cocktails_path, class: "btn btn-danger"%>
+<% end %>
