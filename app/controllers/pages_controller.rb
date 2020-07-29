@@ -4,5 +4,5 @@ class PagesController < ApplicationController
   def home
     @garages = Garage.all
   end
-  
+
 end
