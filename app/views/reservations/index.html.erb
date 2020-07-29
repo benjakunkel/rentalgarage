@@ -13,13 +13,13 @@
   <tbody>
     <tr>
     <% @reservations.each do |reservation| %>
-      <td><%= reservation.user_id %></td>
+      <td><%= reservation.user_id.email %></td>
       <td> <%= reservation.start_at %></td>
       <td><%= reservation.finish_at %></td>
       <td><%= reservation.price %></td>
       <td><%= reservation.reservation_status %> </td>
       <td> Confirmar</td>
-      <td> Rechazar</td>
+      <td> Rechazar </td>
      <% end %>
     </tr>
   </tbody>

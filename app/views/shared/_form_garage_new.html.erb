@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="log-card mt-4">
+    <h3 class="text-center">Nuevo Garage</h3>
+    <div class="form">
+      <div class="form-inputs">
+        <%= simple_form_for @garage do |f| %>
+          <%= f.input :title, label:"Titulo:", required: false %>
+          <%= f.input :phone_number, label:"Telefono:", required: false %>
+          <%= f.input :address, label:"Direccion:", required: false %>
+          <%= f.input :availability, label:"Disponibilidad:", required: false %>
+          <%= f.input :dimensions, label:"Dimensiones:", required: false %>
+          <%= f.input :price_per_hour, label:"Precio por hora:", required: false %>
+          <%= f.input :price_per_day, label:"Precio por dia:", required: false %>
+          <%= f.input :description, label:"Descripcion:", required: false %>
+          <%= f.input :photo, as: :file, label:"Agrega una imagen:", required: false %>
+          <%= f.button :submit, label:"Agregar", class: "btn btn-outline-dark" %> 
+          <%= link_to "Restablecer", "", class: "btn btn-outline-warning"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

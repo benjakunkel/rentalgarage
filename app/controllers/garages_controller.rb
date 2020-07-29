@@ -6,7 +6,7 @@ class GaragesController < ApplicationController
   end
 
   def show
-    @reservations = Reservation.new
+    @reservation = Reservation.new
   end
 
   def new
@@ -15,7 +15,7 @@ class GaragesController < ApplicationController
 
   def create
     @garage = Garage.new(garage_params)
-    # @garage.user = current_user
+    @garage.user = current_user
     if @garage.save
       redirect_to garage_path(@garage)
     else
@@ -28,7 +28,7 @@ class GaragesController < ApplicationController
 
   def update
     @garage.update(garage_params)
-    redirect_to :garage_path(@garage)
+    redirect_to garage_path(@garage)
   end
 
   def destroy
