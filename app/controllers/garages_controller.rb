@@ -7,6 +7,12 @@ class GaragesController < ApplicationController
 
   def show
     @reservation = Reservation.new
+    @garage = Garage.geocoded 
+    @markers = 
+      {
+        lat: @garage.latitude,
+        lng: @garage.longitude
+      }
   end
 
   def new
