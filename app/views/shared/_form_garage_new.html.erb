@@ -1,12 +1,21 @@
-<%= simple_form_for @garage do |f| %>
-  <%= f.input :title %>
-  <%= f.input :phone_number %>
-  <%= f.input :address %>
-  <%= f.input :availability %>
-  <%= f.input :dimensions %>
-  <%= f.input :price_per_hour %>
-  <%= f.input :price_per_day %>
-  <%= f.input :description %>
-  <%= f.submit class: "btn btn-success" %>
-  <%= link_to "CANCEL", cocktails_path, class: "btn btn-danger"%>
-<% end %>
+<div class="container">
+  <div class="log-card mt-4">
+    <h3 class="text-center">Nuevo Garage</h3>
+    <div class="form">
+      <div class="form-inputs">
+        <%= simple_form_for @garage do |f| %>
+          <%= f.input :title, label:"Titulo:", required: false %>
+          <%= f.input :phone_number, label:"Telefono:", required: false %>
+          <%= f.input :address, label:"Direccion:", required: false %>
+          <%= f.input :availability, label:"Disponibilidad:", required: false %>
+          <%= f.input :dimensions, label:"Dimensiones:", required: false %>
+          <%= f.input :price_per_hour, label:"Precio por hora:", required: false %>
+          <%= f.input :price_per_day, label:"Precio por dia:", required: false %>
+          <%= f.input :description, label:"Descripcion:", required: false %>
+          <%= f.submit class: "btn btn-outline-dark"%>
+          <%= link_to "Restablecer", garages_path, class: "btn btn-warning"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
