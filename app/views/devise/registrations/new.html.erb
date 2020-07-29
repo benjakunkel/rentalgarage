@@ -6,20 +6,35 @@
       <div class="form-inputs">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
+        <%= f.input :first_name,            
+                    label: "Ingresa tu nombre:",
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "first_name" }%>
+        <%= f.input :last_name,            
+                    label: "Ingresa tu Apellido:",
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "last_name" }%>
         <%= f.input :email,
                     label: "Ingresa tu mail:",
-                    required: true,
+                    required: false,
                     autofocus: true,
                     input_html: { autocomplete: "email" }%>
         <%= f.input :password,
                     label: "Ingresa tu contraseña:",
-                    required: true,
+                    required: false,
                     hint: ("#{@minimum_password_length} caracteres minimo" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
                     label: "Ingresa tu contraseña nuevamente:",
-                    required: true,
+                    required: false,
                     input_html: { autocomplete: "new-password" } %>
+        <%= f.input :photo, as: :file,
+                    label: "Ingresa una imagen personal:",
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "photo" }%>
         <%= f.button :submit, "Registrar", class: "btn btn-outline-dark mb-2" %>
       <% end %>
       </div>

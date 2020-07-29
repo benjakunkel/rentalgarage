@@ -5,20 +5,20 @@
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button> 
+  </button>
 
   <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
   <div id="barrita" class="search-form-control form-group d-flex m-3">
     <input class="border border-dark  form-control string requirer" placeholder="Buscar garages por zona" type="text" name="" id="" />
     <button name="button" type="submit" class="btn btn-flat"> <i class="fas fa-search"></i> </button>
   </div></form>
-  
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-       
+
         <li class="nav-item active"><%= link_to "Agregar Garage", new_garage_path, class: "dropdown-item" %> </li>
-         <li class="nav-item active"><%= link_to "Mis Reservas", "#", class: "dropdown-item" %> </li>
+         <li class="nav-item active"><%= link_to "Mis Reservas", reservations_path, class: "dropdown-item" %> </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://avatars1.githubusercontent.com/u/61606998?s=460&u=082a27d6296fd919af71818b5754d987140f71b4&v=4", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
