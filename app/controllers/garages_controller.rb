@@ -7,12 +7,12 @@ class GaragesController < ApplicationController
 
   def show
     @reservation = Reservation.new
-    @garage = Garage.geocoded 
     @markers = 
-      {
+      [{
         lat: @garage.latitude,
-        lng: @garage.longitude
-      }
+        lng: @garage.longitude,
+        infoWindow: render_to_string(partial: "shared/info_window", locals: { garage: @garage })
+      }]
   end
 
   def new
