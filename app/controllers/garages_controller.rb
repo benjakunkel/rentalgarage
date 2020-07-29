@@ -6,7 +6,7 @@ class GaragesController < ApplicationController
   end
 
   def show
-    @reservations = Reservation.new
+    @reservation = Reservation.new
   end
 
   def new
