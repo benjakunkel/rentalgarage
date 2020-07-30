@@ -1,6 +1,6 @@
 <h1>Tus reservas</h1>
 <div class="container">
-  <table>
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Nombre</th>
@@ -11,9 +11,10 @@
       </tr>
     </thead>
   <tbody>
-    <tr>
     <% @reservations.each do |reservation| %>
-      <td><%= reservation.user_id.email %></td>
+
+    <tr>
+      <td><%= reservation.user.email %></td>
       <td> <%= reservation.start_at %></td>
       <td><%= reservation.finish_at %></td>
       <td><%= reservation.price %></td>
@@ -25,3 +26,34 @@
   </tbody>
   </table>
 </div>
+<!--
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table> -->
