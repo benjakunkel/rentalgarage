@@ -18,10 +18,10 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
     @reservation.garage = @garage
-    @reservation.price = (@reservation.finish_at - @reservation.start_at)*@garage.price_per_day
+    @reservation.price = (((@reservation.finish_at - @reservation.start_at)/3600)/24)*@garage.price_per_day
     @reservation.reservation_status = true
     @reservation.save!
-    redirect_to reservation_path(@reservation)
+    redirect_to reservations_path
   end
 
   def edit

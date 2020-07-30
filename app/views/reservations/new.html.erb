@@ -1,0 +1,16 @@
+<div class="container">
+<h1 class="text-center">Nueva Reserva</h1>
+  <div class="card">
+  <div id="formulario" class="container text-center">
+    <%= simple_form_for [ @garage, @reservation ] do |f| %>
+      <p>Cochera: <%= @garage.title %></p>
+      <p>Direccion: <%= @garage.address %></p>
+      <small>Description: <%= @garage.description %></small>
+      <p>Precio: $<%= @garage.price_per_day %> / dia</p>
+      <%= f.input :start_at, label:"Fecha y hora de comienzo:",required:false %>
+      <%= f.input :finish_at, label:"Fecha y hora fin:", required:false %>
+      <%= f.submit "Alquilar", class:"btn btn-dark" %>
+    <% end %>
+  </div>
+  <%= link_to "Volver", root_path, class: "btn btn-outline-dark mr-2" %>
+</div>

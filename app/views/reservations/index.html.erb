@@ -1,5 +1,10 @@
-<h1>Tus reservas</h1>
-<div class="container">
+<div class="container mt-3">
+<h1 class="text-center">Tus reservas</h1>
+<% if @reservations.empty? %>
+  <div >
+    <h3 class="text-center mt-3"> No hay reservas disponibles </h3>
+  </div>
+<% else %>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -12,7 +17,7 @@
   <tbody>
     <% @reservations.each do |reservation| %>
     <tr>
-      <td><%= reservation.user.email %></td>
+      <td><%= reservation.user.first_name%> <%= reservation.user.last_name %></td>
       <td> <%= reservation.start_at %></td>
       <td><%= reservation.finish_at %></td>
       <td><%= reservation.price %></td>
@@ -21,5 +26,6 @@
     </tr>
   </tbody>
   </table>
+<% end %>
   <%= link_to "Volver", root_path, class: "btn btn-outline-dark mr-2" %>
 </div>
