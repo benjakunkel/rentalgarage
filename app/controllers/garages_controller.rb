@@ -7,7 +7,7 @@ class GaragesController < ApplicationController
 
   def show
     @reservation = Reservation.new
-    @markers = 
+    @markers =
       [{
         lat: @garage.latitude,
         lng: @garage.longitude,
