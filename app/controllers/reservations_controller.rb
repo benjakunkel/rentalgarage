@@ -2,14 +2,15 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i(show edit update destroy)
 
   def index
-    @reservations =  Reservation.where(user: current_user)
+    @reservations = Reservation.where(user: current_user)
   end
 
   def show
   end
 
   def new
-
+    @garage = Garage.find(params[:garage_id])
+    @reservation = Reservation.new
   end
 
   def create
@@ -45,5 +46,4 @@ class ReservationsController < ApplicationController
   def set_reservation
     @reservation = Reservation.find(params[:id])
   end
-
 end
