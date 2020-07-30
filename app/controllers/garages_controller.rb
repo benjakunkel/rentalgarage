@@ -1,6 +1,6 @@
 class GaragesController < ApplicationController
   before_action :set_garage, only: %i(show edit update destroy)
-  
+
   def index
     @garages = Garage.all
   end
@@ -33,7 +33,7 @@ class GaragesController < ApplicationController
 
   def destroy
     @garage.delete
-    redirect_to garage_path 
+    redirect_to :garage_path
   end
 
   private
