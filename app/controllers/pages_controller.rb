@@ -8,4 +8,6 @@ class PagesController < ApplicationController
       @garages = Garage.all
     end
   end
+  
+  
 end
