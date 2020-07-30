@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2020_07_30_153910) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_garages_on_user_id"
   end
 
