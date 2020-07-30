@@ -1,11 +1,11 @@
 <div class="container">
   <h1 class="text-center mt-3 mb-4">Garages destacados</h1>
-  <div class="row prueba">
+  <div class="row justify-content-center">
       <% @garages.each do |garage| %>
-        <div class="col-4 text-center shadow-lg p-3 mb-4 bg-white rounded float-sm-right">
+        <div class="col-3 text-center shadow-lg p-3 m-4 bg-white rounded float-sm-right">
             <div class="card-img-top text-center">
               <% if garage.photo.attached? %>
-              <%= cl_image_tag garage.photo.key, height: 500, width: 650, crop: :fill, class: "img-fluid" %>
+              <%= cl_image_tag garage.photo.key, height: 500, width: 750, crop: :fill, class: "img-fluid" %>
               <% else %>
                <%= cl_image_tag "nodisponible", height: 300, width: 550, crop: :fill, class: "img-fluid" %>
               <% end %>
@@ -17,10 +17,10 @@
             <p> $ <%= garage.price_per_hour %>/  Hora</p>
               <%# ALQUILAR %>
               <% if current_user%>
-               <%=link_to "Alquilar", garage_path(garage), class:"btn btn-dark mr-1" %>
-              <%# VER MAS %>
-              <% end  %>
-              <%=link_to "Ver Mas", garage_path(garage), class:"btn btn-warning " %>
+                <%=link_to "Alquilar", garage_path(garage), class:"btn btn-dark mr-1" %>
+                <%# VER MAS %>
+                <% end  %>
+                <%=link_to "Ver Mas", garage_path(garage), class:"btn btn-warning " %>
         </div>
       <% end %>     
   </div>
