@@ -49,6 +49,6 @@ a.photo.attach(io: fileh, filename: 'garage9_vfi2le.jpg', content_type: 'image/j
 a.save!
 ######!!!
 filei = URI.open('https://res.cloudinary.com/ayegora/image/upload/v1595973547/garage10_ehdojt.jpg')
-a = Garage.new(user_id: 1, title: 'Bragado Alquila', address: 'Brandsen, Bragado, Argentina', description:'Espacio amplio para camioneta', phone_number:'23648888888', availability: true, price_per_hour: 95, price_per_day: 200, dimensions:'2x50x10')
+a = Garage.new(user_id: 1, title: 'Bragado Alquila', address: 'Brandsen 346, Bragado, Argentina', description:'Espacio amplio para camioneta', phone_number:'23648888888', availability: true, price_per_hour: 95, price_per_day: 200, dimensions:'2x50x10')
 a.photo.attach(io: filei, filename: 'garage10_ehdojt.jpg', content_type: 'image/jpg')
 a.save!
