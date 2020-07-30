@@ -1,0 +1,27 @@
+<div class="container">
+<h1 class="text-center">Nueva Reserva</h1>
+  <div class="card">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Mail</th>
+          <th>Desde</th>
+          <th>Hasta</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+    <tbody>
+      <tr>
+        <td><%= @reservation.user.email %></td>
+        <td> <%= @reservation.start_at %></td>
+        <td><%= @reservation.finish_at %></td>
+        <td><%= @reservation.price %></td>
+      </tr>
+    </tbody>
+    </table>
+    <%= link_to "Confirmar", reservations_path, class: "btn btn-success"  %>
+    <%= link_to "Cancelar", reservation_path(@reservation.id), method: :delete, class: "btn btn-danger"  %>
+  </div>
+  <%= link_to "Volver", root_path, class: "btn btn-outline-dark mr-2" %>
+</div>
+

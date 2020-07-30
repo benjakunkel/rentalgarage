@@ -1,13 +1,17 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: %i(show edit update destroy)
- 
+
   def index
     @reservations =  Reservation.where(user: current_user)
   end
-  
+
   def show
   end
-  
+
+  def new
+
+  end
+
   def create
     @garage = Garage.find(params[:garage_id])
     @reservation = Reservation.new(reservation_params)
@@ -18,7 +22,7 @@ class ReservationsController < ApplicationController
     @reservation.save!
     redirect_to reservation_path(@reservation)
   end
-  
+
   def edit
   end
 
