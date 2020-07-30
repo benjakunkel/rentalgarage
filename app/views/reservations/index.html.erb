@@ -1,0 +1,31 @@
+<div class="container mt-3">
+<h1 class="text-center">Tus reservas</h1>
+<% if @reservations.empty? %>
+  <div >
+    <h3 class="text-center mt-3"> No hay reservas disponibles </h3>
+  </div>
+<% else %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Desde</th>
+        <th>Hasta</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+    <tr>
+      <td><%= reservation.user.first_name%> <%= reservation.user.last_name %></td>
+      <td> <%= reservation.start_at %></td>
+      <td><%= reservation.finish_at %></td>
+      <td><%= reservation.price %></td>
+      <td> <%= link_to "Cancelar", reservation_path(reservation.id), method: :delete, class: "btn btn-danger"  %></td>
+     <% end %>
+    </tr>
+  </tbody>
+  </table>
+<% end %>
+  <%= link_to "Volver", root_path, class: "btn btn-outline-dark mr-2" %>
+</div>
