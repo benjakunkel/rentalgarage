@@ -9,11 +9,14 @@ class ReservationsController < ApplicationController
   end
   
   def create
-
+    @garage = Garage.find(params[:garage_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
-    @reservation.save
-    redirect_to garage_path(@reservation.garage)
+    @reservation.garage = @garage
+    @reservation.price = (@reservation.finish_at - @reservation.start_at)*@garage.price_per_day
+    @reservation.reservation_status = true
+    @reservation.save!
+    redirect_to reservation_path(@reservation)
   end
   
   def edit
