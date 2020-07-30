@@ -23,12 +23,20 @@
         <p class="text-center"><strong> Puntaje: </strong>⭐⭐⭐⭐<p>
         <p class="text-center"><strong> Direccion: </strong><%= @garage.address %></p>
         <p class="text-center"><strong> Precio: </strong> $ <%= @garage.price_per_day %> / Dia <p>
-        <button type="button" class="btn btn-primary d-flex align-center" data-toggle="modal" data-target="#staticBackdrop">
-        Alquilar
-        </button>
-      </div>
+        <% if current_user.id == @garage.user_id%>
+          <div class="text-center">
+            <%=link_to "Actualizar", edit_garage_path(@garage), class:"btn btn-dark mr-1 btn-lg " %>
+          </div>
+        <% else %>
+          <div class="text-center">
+            <button type="button" id="boton-show-alquilar" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#staticBackdrop">
+              Alquilar
+            </button>
+          </div>
+        <% end  %>
 
-      <div>
+      </div>
+      <div id="derecha">
         <%= render 'shared/map' %>
       </div>
   </div>
@@ -51,7 +59,7 @@
       <p>Precio: $<%= @garage.price_per_day %> / dia</p>
       <%= f.input :start_at, label:"Fecha y hora de comienzo:",required:false %>
       <%= f.input :finish_at, label:"Fecha y hora fin:", required:false %>
-      <%= f.submit "Alquilar", class:"btn btn-dark" %>
+      <%= f.submit "Alquilar", class:"btn btn-dark align-center" %>
     <% end %>
   </div>
       </div>

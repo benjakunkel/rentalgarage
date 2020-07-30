@@ -17,13 +17,23 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 16px;
+    height: 200px;
   }
   #medio{
+    display: flex;
+    margin-top: 40px;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: 200px;
+  }
+  #derecha{
     display: flex;
     margin-top: 00px;
     justify-content: center;
     align-content: center;
     flex-direction: column;
+    height: 300px;
   }
 
   #tituloo{
