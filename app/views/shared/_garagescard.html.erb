@@ -1,26 +1,32 @@
 <div class="container">
-  <h1 class="text-center mt-3 mb-4">Garages destacados</h1>
   <div class="row justify-content-center">
       <% @garages.each do |garage| %>
-        <div class="col-3 text-center shadow-lg p-4 m-4 bg-white rounded float-sm-right">
-            <div class="card-img-top text-center">
+        <div class="col-4 p-3">
+          <div class="shadow-lg rounded p-3 mt-2 bg-white h-100 text-center d-flex flex-column justify-content-between"> 
+            <div class="card-img-top">
               <% if garage.photo.attached? %>
-              <%= cl_image_tag garage.photo.key, height: 500, width: 750, crop: :fill, class: "img-fluid" %>
+              <%= cl_image_tag garage.photo.key, height: 550, width: 750, crop: :fill, class: "img-fluid" %>
               <% else %>
-               <%= cl_image_tag "nodisponible", height: 300, width: 550, crop: :fill, class: "img-fluid" %>
+               <%= cl_image_tag "nodisponible", height: 550, width: 550, crop: :fill, class: "img-fluid" %>
               <% end %>
-          </div>
-            <h4><%= garage.title %></h4>
-            <div class="description">
-            <small><%= garage.description %></small>
             </div>
-            <p> $ <%= garage.price_per_day %>/  Dia</p>
-              <%# ALQUILAR %>
-              <% if current_user%>
-                <%=link_to "Alquilar", garage_path(garage), class:"btn btn-dark mr-1" %>
-                <%# VER MAS %>
-                <% end  %>
-                <%=link_to "Ver Mas", garage_path(garage), class:"btn btn-warning " %>
+            <div>
+              <div id="description_card" class="">
+                <h4><%= garage.title %></h4>
+                <div class="description">
+                  <small><%= garage.description %></small>
+                </div>
+                <p> $ <%= garage.price_per_day %>/  Dia</p>
+              </div> <%# ALQUILAR %>
+              <div id="buttons_card" class="">  
+                <% if current_user%>
+                  <%=link_to "Alquilar", garage_path(garage), class:"btn btn-dark mr-1" %>
+                  <%# VER MAS %>
+                  <% end  %>
+                  <%=link_to "Ver Mas", garage_path(garage), class:"btn btn-warning " %>
+              </div>
+            </div>
+          </div>  
         </div>
       <% end %>     
   </div>
