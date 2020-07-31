@@ -1,7 +1,7 @@
 class Garage < ApplicationRecord
   belongs_to :user
   has_many :reservation, dependent: :destroy
-  validates :title, :description, :address, :availability, :phone_number, :dimensions, :price_per_day, :price_per_hour, presence: true
+  validates :title, :description, :address, :phone_number, :dimensions, :price_per_day, presence: true
   validates :title, :address, uniqueness: true
   has_one_attached :photo
   geocoded_by :address

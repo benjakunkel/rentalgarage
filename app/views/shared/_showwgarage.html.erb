@@ -21,7 +21,9 @@
         <h1 class="text-center mt-3"><%= @garage.title %></h1>
         <p class="text-center"><%= @garage.description %></p>
         <p class="text-center"><strong> Puntaje: </strong>⭐⭐⭐⭐<p>
-        <p class="text-center"><strong> Direccion: </strong><%= @garage.address %></p>
+        <p class="text-center"><strong> Dirección: </strong><%= @garage.address %></p>
+        <p class="text-center"><strong> Teléfono: </strong><%= @garage.phone_number %></p>
+        <p class="text-center"><strong> Dimensiones: </strong><%= @garage.dimensions %></p>
         <p class="text-center"><strong> Precio: </strong> $ <%= @garage.price_per_day %> / Dia <p>
         <% if current_user.id == @garage.user_id%>
           <div class="text-center">
