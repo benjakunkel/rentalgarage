@@ -19,8 +19,12 @@
   <tbody>
     <% @reservations.each do |reservation| %>
     <tr>
-      <td> <%= cl_image_tag reservation.garage.photo.key, height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
-      <td><%= reservation.garage.title %></td>
+     <% if reservation.garage.photo.attached? %>
+        <td> <%= cl_image_tag reservation.garage.photo.key, height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
+      <% else %>
+         <td><%= cl_image_tag "nodisponible", height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
+      <% end %>
+      <td><%= link_to "#{reservation.garage.title}", garage_path(reservation.garage.id) %></td>
       <td><%= reservation.garage.address %></td>
       <td> <%= reservation.start_at %></td>
       <td><%= reservation.finish_at %></td>
