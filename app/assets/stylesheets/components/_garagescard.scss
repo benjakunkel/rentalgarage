@@ -1,9 +1,23 @@
 h1{
   font-size: 30px;
+  font-family: 'Roboto', "sans-serif";
+  font-weight: "bold";
+  opacity: .7;
 }
+
 #description_card{
-  font-family:"Nunito", "Helvetica", "sans-serif" ;
-}
+  font-family: 'Roboto Slab', serif;}
+
 h4{
-  font-family: "Helvetica", "sans-serif";
+  font-family: 'Roboto Slab', serif;}
+
+#cardcita{
+  border-radius: 10px !important;
+  border: 1px solid white;
+  box-shadow: 4px 4px 4px -2px rgba(173,170,173,1) !important;
+}
+
+.fotita{
+  border-radius: 8px !important;
+  border: 1px solid white;
 }
