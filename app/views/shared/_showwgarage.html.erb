@@ -11,7 +11,7 @@
 
       <div id="foto"class="card-category col align-self-center ">
         <% if @garage.photo.attached? %>
-          <%= cl_image_tag @garage.photo.key, height: 300, width: 450, crop: :fill, class: "img-fluid"%>
+          <%= cl_image_tag @garage.photo.key, height: 300, width: 450, crop: :fill, class: "fotitolinda img-fluid"%>
         <% else %>
           <%= cl_image_tag "nodisponible", height: 300, width: 300, crop: :fill, class: "img-fluid" %>
         <% end %>
@@ -20,7 +20,6 @@
       <div id="medio" class="card-category">
         <h1 class="text-center mt-3"><%= @garage.title %></h1>
         <p class="text-center"><%= @garage.description %></p>
-        <p class="text-center"><strong> Puntaje: </strong>⭐⭐⭐⭐<p>
         <p class="text-center"><strong> Dirección: </strong><%= @garage.address %></p>
         <p class="text-center"><strong> Teléfono: </strong><%= @garage.phone_number %></p>
         <p class="text-center"><strong> Dimensiones: </strong><%= @garage.dimensions %></p>

@@ -13,10 +13,10 @@
   
   <div>
   <div class="container mt-3 ">
-<h1 class="text-center ">Tus reservas</h1>
+<h1 class="vanaranja textito text-center ">Tus reservas</h1>
 <% if @reservations.empty? %>
   <div >
-    <h3 class="text-center mt-3"> No hay reservas disponibles </h3>
+    <h3 class="textito text-center mt-3"> No hay reservas disponibles </h3>
   </div>
 <% else %>
   <table class="table table-striped">
@@ -57,10 +57,10 @@
 
   <div>
     <div class="container mt-3">
-<h1 class="text-center">Tus Garages</h1>
+<h1 class="vanaranja textito text-center">Tus garages</h1>
 <% if @garages.empty? %>
   <div >
-    <h3 class="text-center mt-3"> No hay garages disponibles </h3>
+    <h3 class="textito text-center mt-3"> No hay garages disponibles </h3>
   </div>
 <% else %>
   <table class="table table-striped">
@@ -71,7 +71,6 @@
         <th>Direccion</th>
         <th>Dimensiones</th>
         <th>Precio</th>
-      </tr>
     </thead>
   <tbody>
     <% @garages.each do |garage| %>
@@ -85,7 +84,8 @@
       <td><%= garage.address %></td>
       <td> <%= garage.dimensions %></td>
       <td><%= garage.price_per_day %></td>
-      <td> <%= link_to "Eliminar", garage_path(garage.id), method: :delete, class: "btn btn-danger align-content-end"  %></td>
+      <td > <%= link_to "Eliminar", garage_path(garage.id), method: :delete, class: "eliminar btn btn-danger align-content-end"  %></td>
+
      <% end %>
     </tr>
   </tbody>

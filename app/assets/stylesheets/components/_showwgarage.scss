@@ -27,6 +27,7 @@
     flex-direction: column;
     height: 200px;
   }
+  
   #derecha{
     display: flex;
     margin-top: 00px;
@@ -36,14 +37,22 @@
     height: 300px;
   }
 
+  .fotitolinda{
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px -2px rgba(173,170,173,1) !important;
+
+  }
+
   #tituloo{
-    color: white;
+    color: rgb(199, 132, 9);
+    opacity: .7;
     font-weight: 800;
     font-size: 70px;
     text-align: center;
     vertical-align: middle;
     line-height: 250px
   }
+ 
   #formulario{
     color:grey;
   }
