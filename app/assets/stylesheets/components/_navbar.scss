@@ -3,12 +3,11 @@
   background: white;
   align-items: center;
   height: 55px;
-
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-  
+
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -26,4 +25,21 @@
     margin: 0;
     height: 40px;
   }
+}
+
+
+.buscador_navbar{
+  justify-content: space-between;
+  background: white;
+  align-items: center;
+  height: 55px;
+  position: relative;
+  padding-top: 10px;
+  padding-left: 62px;
+}
+.lupa_navbar{
+  position: absolute !important;
+  left: 700px;
+  bottom: 9px;
+
 }
