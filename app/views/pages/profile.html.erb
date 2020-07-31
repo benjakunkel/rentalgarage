@@ -1,13 +1,102 @@
 <div class="container">
 
   <div class="card-profile mt-4 shadow-lg p-3 mb-5 bg-white rounded">
-  <img src="https://avatars1.githubusercontent.com/u/61606998?s=460&u=082a27d6296fd919af71818b5754d987140f71b4&v=4" />
-  <div class="card-profile-infos">
-    <h4 class=""> <strong> Nombre :</strong> <%= current_user.first_name%> </h3>
-    <h4 class=""><strong> Apellido :</strong>  <%=current_user.last_name  %> </h3>
-    <h6 class=""><strong> Email :</strong>  <%=current_user.email  %> </h6>
-    <%= link_to "Editar Perfil", edit_user_registration_path , class:"btn btn-outline-dark ml-1" %>
+    <img src="https://avatars1.githubusercontent.com/u/61606998?s=460&u=082a27d6296fd919af71818b5754d987140f71b4&v=4" />
+   <div class="card-profile-infos">
+      <h4 class=""> <strong> Nombre :</strong> <%= current_user.first_name%> </h3>
+      <h4 class=""><strong> Apellido :</strong>  <%=current_user.last_name  %> </h3>
+      <h6 class=""><strong> Email :</strong>  <%=current_user.email  %> </h6>
+      <%= link_to "Editar Perfil", edit_user_registration_path , class:"btn btn-outline-dark ml-1" %>
+    </div>
   </div>
-  <div></div>
+
+  
+  <div>
+  <div class="container mt-3 ">
+<h1 class="text-center ">Tus reservas</h1>
+<% if @reservations.empty? %>
+  <div >
+    <h3 class="text-center mt-3"> No hay reservas disponibles </h3>
+  </div>
+<% else %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Garage</th>
+        <th>Direccion</th>
+        <th>Desde</th>
+        <th>Hasta</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+    <tr>
+     <% if reservation.garage.photo.attached? %>
+        <td> <%= cl_image_tag reservation.garage.photo.key, height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
+      <% else %>
+         <td><%= cl_image_tag "nodisponible", height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
+      <% end %>
+      <td><%= link_to "#{reservation.garage.title}", garage_path(reservation.garage.id) %></td>
+      <td><%= reservation.garage.address %></td>
+      <td> <%= reservation.start_at %></td>
+      <td><%= reservation.finish_at %></td>
+      <td><%= reservation.price %></td>
+      <td> <%= link_to "Cancelar", reservation_path(reservation.id), method: :delete, class: "btn btn-danger"  %></td>
+     <% end %>
+    </tr>
+  </tbody>
+  </table>
+  <% end %> 
+  <div class="d-flex justify-content-center mt-4">
+  </div>
+  </div>
+
+
+
+  <div>
+    <div class="container mt-3">
+<h1 class="text-center">Tus Garages</h1>
+<% if @garages.empty? %>
+  <div >
+    <h3 class="text-center mt-3"> No hay garages disponibles </h3>
+  </div>
+<% else %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Garage</th>
+        <th>Direccion</th>
+        <th>Dimensiones</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+  <tbody>
+    <% @garages.each do |garage| %>
+    <tr>
+      <% if garage.photo.attached? %>
+        <td> <%= cl_image_tag garage.photo.key, height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
+      <% else %>
+         <td><%= cl_image_tag "nodisponible", height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
+      <% end %>
+      <td><%= link_to "#{garage.title}", garage_path(garage.id) %></td>
+      <td><%= garage.address %></td>
+      <td> <%= garage.dimensions %></td>
+      <td><%= garage.price_per_day %></td>
+      <td> <%= link_to "Eliminar", garage_path(garage.id), method: :delete, class: "btn btn-danger align-content-end"  %></td>
+     <% end %>
+    </tr>
+  </tbody>
+  </table>
+<% end %>
+  <div class="d-flex justify-content-center mt-4">
+    <%= link_to "Volver", root_path, class: "btn btn-outline-dark mr-2" %>
+  </div>
 </div>
+  
+  </div>
+
+  </div>
 </div>
