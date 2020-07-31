@@ -1,0 +1,42 @@
+<div class="container mt-3">
+<h1 class="text-center">Tus Garages</h1>
+<% if @garages.empty? %>
+  <div >
+    <h3 class="text-center mt-3"> No hay garages disponibles </h3>
+  </div>
+<% else %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Garage</th>
+        <th>Direccion</th>
+        <th>Dimensiones</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+  <tbody>
+    <% @garages.each do |garage| %>
+    <tr>
+      <% if garage.photo.attached? %>
+        <td> <%= cl_image_tag garage.photo.key, height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
+      <% else %>
+         <td><%= cl_image_tag "nodisponible", height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
+      <% end %>
+      <td><%= link_to "#{garage.title}", garage_path(garage.id) %></td>
+      <td><%= garage.address %></td>
+      <td> <%= garage.dimensions %></td>
+      <td><%= garage.price_per_day %></td>
+      <td> <%= link_to "Cancelar", garage_path(garage.id), method: :delete, class: "btn btn-danger"  %></td>
+     <% end %>
+    </tr>
+  </tbody>
+  </table>
+<% end %>
+  <div class="d-flex justify-content-center mt-4">
+    <%= link_to "Volver", root_path, class: "btn btn-outline-dark mr-2" %>
+  </div>
+</div>
+<div class="fixed-bottom">
+<%= render 'shared/footer' %>
+</div>

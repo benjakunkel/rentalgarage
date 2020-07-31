@@ -2,7 +2,8 @@ class GaragesController < ApplicationController
   before_action :set_garage, only: %i(show edit update destroy)
 
   def index
-    @garages = Garage.all
+    # @garages = current_user.garage
+    @garages = Garage.where(user: current_user)
   end
 
   def show
@@ -38,8 +39,8 @@ class GaragesController < ApplicationController
   end
 
   def destroy
-    @garage.delete
-    redirect_to :garage_path
+    @garage.destroy
+    redirect_to garages_path
   end
 
   private
