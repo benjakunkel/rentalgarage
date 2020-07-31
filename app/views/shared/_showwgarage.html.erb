@@ -57,8 +57,8 @@
       <p>Direccion: <%= @garage.address %></p>
       <small>Description: <%= @garage.description %></small>
       <p>Precio: $<%= @garage.price_per_day %> / dia</p>
-      <%= f.input :start_at, label:"Fecha y hora de comienzo:",required:false %>
-      <%= f.input :finish_at, label:"Fecha y hora fin:", required:false %>
+      <%= f.input :start_at, as: :date, order: [:day, :month, :year], label:"Fecha y hora de comienzo:",required:false %>
+      <%= f.input :finish_at, as: :date, order: [:day, :month, :year], label:"Fecha y hora fin:", required:false %>
       <%= f.submit "Alquilar", class:"btn btn-dark align-center" %>
     <% end %>
   </div>
