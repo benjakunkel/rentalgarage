@@ -1,0 +1,13 @@
+<div class="container">
+
+  <div class="card-profile mt-4 shadow-lg p-3 mb-5 bg-white rounded">
+  <img src="https://avatars1.githubusercontent.com/u/61606998?s=460&u=082a27d6296fd919af71818b5754d987140f71b4&v=4" />
+  <div class="card-profile-infos">
+    <h4 class=""> <strong> Nombre :</strong> <%= current_user.first_name%> </h3>
+    <h4 class=""><strong> Apellido :</strong>  <%=current_user.last_name  %> </h3>
+    <h6 class=""><strong> Email :</strong>  <%=current_user.email  %> </h6>
+    <%= link_to "Editar Perfil", edit_user_registration_path , class:"btn btn-outline-dark ml-1" %>
+  </div>
+  <div></div>
+</div>
+</div>
