@@ -8,7 +8,10 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th></th>
         <th>Nombre</th>
+        <th>Garage</th>
+        <th>Direccion</th>
         <th>Desde</th>
         <th>Hasta</th>
         <th>Precio</th>
@@ -17,7 +20,10 @@
   <tbody>
     <% @reservations.each do |reservation| %>
     <tr>
+      <td><%= reservation.user.photo%></td>
       <td><%= reservation.user.first_name%> <%= reservation.user.last_name %></td>
+      <td><%= reservation.garage.title %></td>
+      <td><%= reservation.garage.address %></td>
       <td> <%= reservation.start_at %></td>
       <td><%= reservation.finish_at %></td>
       <td><%= reservation.price %></td>
