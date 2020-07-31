@@ -9,5 +9,9 @@ class PagesController < ApplicationController
     end
   end
   
+  def profile
+    @reservations = Reservation.where(user: current_user)
+    @garages = Garage.where(user: current_user)
+  end
   
 end
