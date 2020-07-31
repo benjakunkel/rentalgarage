@@ -9,7 +9,6 @@
     <thead>
       <tr>
         <th></th>
-        <th>Nombre</th>
         <th>Garage</th>
         <th>Direccion</th>
         <th>Desde</th>
@@ -20,8 +19,7 @@
   <tbody>
     <% @reservations.each do |reservation| %>
     <tr>
-      <td><%= reservation.user.photo%></td>
-      <td><%= reservation.user.first_name%> <%= reservation.user.last_name %></td>
+      <td> <%= cl_image_tag reservation.garage.photo.key, height: 80, width: 100, crop: :fill, class: "img-fluid" %></td>
       <td><%= reservation.garage.title %></td>
       <td><%= reservation.garage.address %></td>
       <td> <%= reservation.start_at %></td>
@@ -33,5 +31,10 @@
   </tbody>
   </table>
 <% end %>
-  <%= link_to "Volver", root_path, class: "btn btn-outline-dark mr-2" %>
+  <div class="d-flex justify-content-center mt-4">
+    <%= link_to "Volver", root_path, class: "btn btn-outline-dark mr-2" %>
+  </div>
+</div>
+<div class="fixed-bottom">
+<%= render 'shared/footer' %>
 </div>
